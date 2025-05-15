@@ -11,10 +11,14 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         VStack(spacing: 16) {
-            Image(systemName: "person.crop.circle")
+            Image("profile")
                 .resizable()
+                .scaledToFill()
                 .frame(width: 120, height: 120)
-                .foregroundColor(.blue)
+                .clipShape(Circle()) // Makes it circular
+                .overlay(Circle().stroke(Color.gray, lineWidth: 0)) // Optional border
+                .shadow(radius: 4) // Optional shadow
+
             Text("Md. Maruf Prodhan")
                 .font(.title)
                 .fontWeight(.bold)
